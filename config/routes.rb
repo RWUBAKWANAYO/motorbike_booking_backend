@@ -1,9 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root 'users#index'
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :api do
+    namespace :v1 do
+            # For categories CRUD
+      get '/categories', to: 'categories#index' do
+        get :image, on: :member
+      end
+      get '/categories/:id', to: 'categories#show' do
+        get :image, on: :member
+      end
+      post '/add_category', to: 'categories#create'
+      delete '/del_category', to: 'categories#destroy'
+    end
+  end
 end
