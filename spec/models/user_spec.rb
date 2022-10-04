@@ -12,13 +12,13 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'is not valid without a password' do
-    subject.password = nil
+  it 'is not valid without a password more than 6 characters' do
+    subject.password = 'a' * 5
     expect(subject).to_not be_valid
   end
 
-  it 'is not valid without a name' do
-    subject.name = nil
+  it 'is not valid without a password' do
+    subject.password = nil
     expect(subject).to_not be_valid
   end
 
