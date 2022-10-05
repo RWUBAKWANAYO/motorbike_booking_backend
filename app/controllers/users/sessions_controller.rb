@@ -3,23 +3,24 @@ class Users::SessionsController < Devise::SessionsController
 
   private
 
-  def respond_with(resource, _opts = {})
-  render json: {status:200, message: 'Login successfully!',user:current_user}, status: :ok
+  def respond_with(_resource, _opts = {})
+    render json: { status: 200, message: 'Login successfully!', user: current_user }, status: :ok
   end
 
   def respond_to_on_destroy
     user = get_user_from_token
 
     if user
-      render json: {status:200, message: 'User logged out successfully'}, status: :ok
+      render json: { status: 200, message: 'User logged out successfully' }, status: :ok
     else
-      render json: {status:401, message: 'Fail to logout user',errors:resource.errors.full_messages}, status: :unprocessable_entity
+      render json: { status: 401, message: 'Fail to logout user', errors: resource.errors.full_messages },
+             status: :unprocessable_entity
     end
   end
 
   def get_user_from_token
-    jwt_payload = JWT.decode(request.headers['Authorization'].split(' ')[1],
-    Rails.application.credentials.devise[:jwt_secret_key]).first
+    jwt_payload = JWT.decode(request.headers['Authorization'].split[1],
+                             Rails.application.credentials.devise[:jwt_secret_key]).first
     user = User.find(jwt_payload['sub'])
   end
 end

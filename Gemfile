@@ -7,7 +7,6 @@ gem 'devise'
 
 gem 'devise-jwt'
 
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
 
