@@ -7,7 +7,7 @@ RSpec.describe Reservation, type: :model do
     # #   motorbike.create(name: 'Test Motorbike', description: 'Best Motorbike', location: 'Uyo City',
     # #                 price: '150', size: '20 by 40', image: 'photo.png')
     # end
-    subject { described_class.new(date: '2005-10-10', city: 'Uyo City', user: user) }
+    subject { described_class.new(date: '2005-10-10', city: 'Uyo City', user:) }
 
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
