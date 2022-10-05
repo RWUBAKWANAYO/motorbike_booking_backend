@@ -3,7 +3,6 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-            # For categories CRUD
       get '/categories', to: 'categories#index' do
         get :image, on: :member
       end
