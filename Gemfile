@@ -5,9 +5,8 @@ ruby '3.1.2'
 
 gem 'devise'
 
-gem 'jwt'
+gem 'devise-jwt'
 
-gem 'bcrypt'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
