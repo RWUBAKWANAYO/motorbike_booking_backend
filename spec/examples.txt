@@ -1,10 +1,9 @@
-example_id                                | status | run_time        |
------------------------------------------ | ------ | --------------- |
-./spec/models/user_spec.rb[1:1]           | passed | 2.6 seconds     |
-./spec/models/user_spec.rb[1:2]           | passed | 0.00689 seconds |
-./spec/models/user_spec.rb[1:3]           | passed | 0.01109 seconds |
-./spec/models/user_spec.rb[1:4]           | passed | 0.00759 seconds |
-./spec/models/user_spec.rb[1:5]           | passed | 0.01158 seconds |
-./spec/requests/categories_spec.rb[1:1:1] | passed | 0.03023 seconds |
-./spec/requests/categories_spec.rb[1:1:2] | passed | 0.01298 seconds |
-./spec/requests/categories_spec.rb[1:2:1] | passed | 0.51979 seconds |
+example_id                               | status | run_time        |
+---------------------------------------- | ------ | --------------- |
+./spec/models/categories_spec.rb[1:1:1]  | passed | 0.07897 seconds |
+./spec/models/categories_spec.rb[1:1:2]  | passed | 0.33976 seconds |
+./spec/models/reservation_spec.rb[1:1:1] | passed | 0.02895 seconds |
+./spec/models/reservation_spec.rb[1:1:2] | passed | 0.01812 seconds |
+./spec/models/reservation_spec.rb[1:1:3] | passed | 0.01336 seconds |
+./spec/models/reservation_spec.rb[1:1:4] | passed | 0.44661 seconds |
+./spec/models/reservation_spec.rb[1:1:5] | passed | 0.0187 seconds  |
