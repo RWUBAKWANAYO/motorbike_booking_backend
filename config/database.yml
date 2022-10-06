@@ -19,14 +19,12 @@ default: &default
   adapter: postgresql
   encoding: unicode
   host: localhost
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  username: postgres
+  password: Eduardo1!@
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 development:
   <<: *default
   database: motorbike_booking_backend_development
-  username: postgres
-  password: Eduardo1!@
   #password: Martial@5009
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
@@ -53,9 +51,6 @@ development:
 test:
   <<: *default
   database: motorbike_booking_backend_test
-  host: 127.0.0.1
-  username: postgres
-  password: Eduardo1!@
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -77,8 +72,7 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-#production:
-#  <<: *default
- # database: recipe_app_production
- # username: recipe_app
- # password: <%= ENV["recipe_APP_DATABASE_PASSWORD"] %>
+production:
+  <<: *default
+  database: motorbike_booking_backend_production
+  password: <%= ENV["MOTORBIKE_BOOKING_BACKEND_DATABASE_PASSWORD"] %>
