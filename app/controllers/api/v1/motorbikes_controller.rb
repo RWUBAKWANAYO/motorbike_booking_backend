@@ -37,4 +37,13 @@ class Api::V1::MotorbikesController < ApplicationController
       render json: { error: 'Error deleting motorbike' }
     end
   end
+
+  def update
+    motorbike = Motorbike.find_by_id(params[:id])
+    if motorbike.update(reserved_params)
+      render json: { message: 'Motorbike updated successfully' }
+    else
+      render json: { error: 'Error updating motorbike' }
+    end
+  end
 end
