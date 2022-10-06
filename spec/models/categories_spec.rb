@@ -18,10 +18,10 @@ RSpec.describe Category, type: :brand do
     end
   end
 
-  context 'associations' do
-    it 'has many motorbikes' do
-      associate = described_class.reflect_on_association(:motorbikes)
-      expect(associate.macro).to eq :has_many
-    end
-  end
+  # context 'associations' do
+  #   it 'has many motorbikes' do
+  #     associate = described_class.reflect_on_association(:motorbikes)
+  #     expect(associate.macro).to eq :has_many
+  #   end
+  # end
 end
