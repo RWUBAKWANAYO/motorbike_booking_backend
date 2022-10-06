@@ -1,5 +1,5 @@
 class AdvertsController < ApplicationController
-  before_action :set_advert, only: %i[ show update destroy ]
+  before_action :set_advert, only: %i[show update destroy]
 
   # GET /adverts
   def index
@@ -39,13 +39,14 @@ class AdvertsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_advert
-      @advert = Advert.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def advert_params
-      params.require(:advert).permit(:name, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_advert
+    @advert = Advert.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def advert_params
+    params.require(:advert).permit(:name, :image)
+  end
 end
