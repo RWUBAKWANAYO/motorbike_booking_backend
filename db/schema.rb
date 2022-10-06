@@ -34,6 +34,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_065006) do
     t.index ["category_id"], name: "index_motorbikes_on_category_id"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.date "date"
+    t.string "city"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "role", default: "user"
@@ -51,4 +60,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_065006) do
   end
 
   add_foreign_key "motorbikes", "categories"
+  add_foreign_key "reservations", "users"
 end
