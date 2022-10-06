@@ -46,4 +46,10 @@ class Api::V1::MotorbikesController < ApplicationController
       render json: { error: 'Error updating motorbike' }
     end
   end
+
+  private
+
+  def motorbike_params
+    params.require(:motorbike).permit(:image, :categID, :price, :year, :brand)
+  end
 end
