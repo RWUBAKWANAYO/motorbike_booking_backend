@@ -22,9 +22,12 @@ class Api::V1::CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      render json: { message: @category }, status: :ok
+      render json: { message:'Category created successfully!',
+      .
+      data: @category }, status: :ok
     else
-      render json: { error: 'Error creating category' }
+      render json: { message: 'Fail to create category', errors: @category.errors.full_messages },
+      status: :unprocessable_entity
     end
   end
 
@@ -39,6 +42,6 @@ class Api::V1::CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:categname, :image, :image)
+    params.require(:category).permit(:categname, :image, :description)
   end
 end
