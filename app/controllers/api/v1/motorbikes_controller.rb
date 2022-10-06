@@ -18,4 +18,23 @@ class Api::V1::MotorbikesController < ApplicationController
       render json: { error: 'Unable to find motorbike' }
     end
   end
+
+  def create
+    motorbike = Motorbike.new(motorbike_params)
+    if motorbike.save
+      render json: { message: 'Motorbike created successfully' }
+    else
+      render json: { message: 'Error creating motorbike', errors: motorbike.errors.full_messages },
+             status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    motorbike = Motorbike.find_by_id(params[:id])
+    if motorbike.destroy
+      render json: { message: 'Motorbike deleted successfully' }
+    else
+      render json: { error: 'Error deleting motorbike' }
+    end
+  end
 end
