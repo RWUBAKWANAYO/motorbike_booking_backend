@@ -25,8 +25,6 @@ default: &default
 development:
   <<: *default
   database: motorbike_booking_backend_development
-  username: postgres
-  password: Eduardo1!@
   #password: Martial@5009
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
@@ -53,9 +51,6 @@ development:
 test:
   <<: *default
   database: motorbike_booking_backend_test
-  host: 127.0.0.1
-  username: postgres
-  password: Eduardo1!@
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
