@@ -16,7 +16,7 @@ class Api::V1::MotorbikesController < ApplicationController
     if @motorbike
       render json: @motorbike, include: [:reservations]
     else
-      render json: { message: 'Unable to find @motorbike', errors: @motorbike.errors.full_messages },
+      render json: { message: 'Unable to find @motorbike', errors: @motorbikes.errors.full_messages },
              status: :unprocessable_entity
     end
   end
