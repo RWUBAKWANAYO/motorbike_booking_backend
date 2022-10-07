@@ -9,7 +9,9 @@ class Api::V1::ReservationsController < ApplicationController
     if @reserved_motorbikes
       render json: { reservation: @reserved_motorbikes }
     else
-      render json: { error: 'Unable to find your reservation' }, status: :unprocessable_entity
+    @reserved_motorbikes = Reservation.where(id: params[:id])
+    render json: { message: 'Unable to find your reservation', errors: @reserved_motorbikes.errors.full_messages },
+      status: :unprocessable_entity
     end
   end
 
@@ -22,7 +24,8 @@ class Api::V1::ReservationsController < ApplicationController
     if @reservation.save
       render json: { message: 'reservation created' }, status: :created
     else
-      render json: { error: 'Unable to create reservation' }, status: :unprocessable_entity
+      render json: { message: 'Unable to create reservation', errors: @reservation_motorbikes.errors.full_messages },
+      status: :unprocessable_entity
     end
   end
 
