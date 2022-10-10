@@ -22,7 +22,9 @@ class Api::V1::MotorbikesController < ApplicationController
   end
 
   def create
+    @category = Category.find(params[:category_id])
     @motorbike = Motorbike.new(motorbike_params)
+    @motorbike.category_id = @category.id
     if @motorbike.save
       render json: { message: 'Motorbike created successfully' }
     else
@@ -53,6 +55,6 @@ class Api::V1::MotorbikesController < ApplicationController
   private
 
   def motorbike_params
-    params.require(:motorbike).permit(:image, :categID, :price, :year, :brand)
+    params.require(:motorbike).permit(:image, :category_id, :price, :year, :brand)
   end
 end

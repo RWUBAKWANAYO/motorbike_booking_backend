@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_07_091729) do
 
   create_table "motorbikes", force: :cascade do |t|
     t.string "brand"
-    t.string "categID"
     t.string "year"
     t.bigint "category_id", null: false
     t.string "image"
