@@ -16,11 +16,11 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def create
-    # @motorcycle = Motorcycle.find(params[:id])
+    @motorbike = Motorbike.find(params[:motorbike_id])
+    @user = User.find(params[:user_id])
     @reservation = Reservation.new(reservation_params)
-    # @reservation.motorcycle_id = @motorcycle.id
-    # @reservation.user_id = current_user.id
-    # @reservation.total_price =
+    @reservation.motorbike_id = @motorbike.id
+    @reservation.user_id = @user.id
     if @reservation.save
       render json: { message: 'reservation created' }, status: :created
     else
