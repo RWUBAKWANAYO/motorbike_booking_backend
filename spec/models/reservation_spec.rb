@@ -4,7 +4,7 @@ RSpec.describe Reservation, type: :model do
     @user = User.create(name: 'Pedro', email: 'pedro@gmail.com', password: 'pass123',
                         password_confirmation: 'pass123')
     @category = Category.create(categname: 'Rally')
-    @motorbike = Motorbike.create(brand: 'Yamaha', year: 2019,
+    @motorbike = Motorbike.create(motor_name: 'Yamaha', year: 2019,
                                   image: 'yamaha.jpg', category_id: @category.id)
   end
   context 'validations' do

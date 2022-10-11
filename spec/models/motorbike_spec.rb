@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe Motorbike, type: :model do
   before :each do
     @category = Category.create(categname: 'Sport')
-    @motorbike = Motorbike.new(brand: 'BMW', year: 2022,
+    @motorbike = Motorbike.new(motor_name: 'BMW', year: 2022,
                                image: 'https://www.bmw.com.jpg',
-                               price: 200, categID: @category.id)
+                               price: 200)
     @motorbike.save
   end
 
   context 'validations' do
-    it 'should be invalid without a brand' do
-      @motorbike.brand = nil
+    it 'should be invalid without a motor_name' do
+      @motorbike.motor_name = nil
       expect(@motorbike).to_not be_valid
     end
     it 'should be invalid without a year' do
@@ -24,10 +24,6 @@ RSpec.describe Motorbike, type: :model do
     end
     it 'should be invalid without a price' do
       @motorbike.price = nil
-      expect(@motorbike).to_not be_valid
-    end
-    it 'should be invalid without a category' do
-      @motorbike.categID = nil
       expect(@motorbike).to_not be_valid
     end
     it 'should be invalid if price is less than 0' do
