@@ -2,7 +2,6 @@ require 'swagger_helper'
 
 RSpec.describe 'api/user', type: :request do
   path '/user' do
-
     post 'Creates a user' do
       tags 'Users'
       consumes 'application/json'
@@ -12,7 +11,7 @@ RSpec.describe 'api/user', type: :request do
           title: { type: :string },
           content: { type: :string }
         },
-        required: [ 'title', 'content' ]
+        required: %w[title content]
       }
 
       response '201', 'user created' do
@@ -28,7 +27,6 @@ RSpec.describe 'api/user', type: :request do
   end
 
   path '/users/{id}' do
-
     get 'Retrieves a user' do
       tags 'Users', 'Another Tag'
       produces 'application/json', 'application/xml'
@@ -36,12 +34,12 @@ RSpec.describe 'api/user', type: :request do
 
       response '200', 'user found' do
         schema type: :object,
-          properties: {
-            id: { type: :integer },
-            title: { type: :string },
-            content: { type: :string }
-          },
-          required: [ 'id', 'title', 'content' ]
+               properties: {
+                 id: { type: :integer },
+                 title: { type: :string },
+                 content: { type: :string }
+               },
+               required: %w[id title content]
 
         let(:id) { User.create(title: 'foo', content: 'bar').id }
         run_test!
@@ -53,10 +51,9 @@ RSpec.describe 'api/user', type: :request do
       end
 
       response '406', 'unsupported accept header' do
-        let(:'Accept') { 'application/foo' }
+        let(:Accept) { 'application/foo' }
         run_test!
       end
     end
   end
 end
-
