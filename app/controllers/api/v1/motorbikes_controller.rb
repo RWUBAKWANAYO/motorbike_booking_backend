@@ -16,13 +16,15 @@ class Api::V1::MotorbikesController < ApplicationController
     if @motorbike
       render json: @motorbike, include: [:reservations]
     else
-      render json: { message: 'Unable to find @motorbike', errors: @motorbike.errors.full_messages },
+      render json: { message: 'Unable to find @motorbike', errors: @motorbikes.errors.full_messages },
              status: :unprocessable_entity
     end
   end
 
   def create
+    @category = Category.find(params[:category_id])
     @motorbike = Motorbike.new(motorbike_params)
+    @motorbike.category_id = @category.id
     if @motorbike.save
       render json: { message: 'Motorbike created successfully' }
     else
@@ -53,6 +55,6 @@ class Api::V1::MotorbikesController < ApplicationController
   private
 
   def motorbike_params
-    params.require(:motorbike).permit(:image, :categID, :price, :year, :brand)
+    params.require(:motorbike).permit(:image, :category_id, :price, :year, :motor_name)
   end
 end

@@ -1,53 +1,45 @@
 require 'rails_helper'
-
 RSpec.describe Reservation, type: :model do
-  describe 'validations' do
-    let(:user) { User.create(name: 'Rilley', email: 'test@test.com', password: '543210') }
-    # # let(:motorbike) do
-    # #   motorbike.create(name: 'Test Motorbike', description: 'Best Motorbike', location: 'Uyo City',
-    # #                 price: '150', size: '20 by 40', image: 'photo.png')
-    # end
-    subject { described_class.new(date: '2005-10-10', city: 'Uyo City', user:) }
-
-    it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+  before :each do
+    @user = User.create(name: 'Pedro', email: 'pedro@gmail.com', password: 'pass123',
+                        password_confirmation: 'pass123')
+    @category = Category.create(categname: 'Rally')
+    @motorbike = Motorbike.create(motor_name: 'Yamaha', year: 2019,
+                                  image: 'yamaha.jpg', category_id: @category.id)
+  end
+  context 'validations' do
+    it 'should be invalid without a user' do
+      @reservation = Reservation.new(user_id: nil, motorbike_id: @motorbike.id, date: Date.today)
+      @reservation.save
+      expect(@reservation).to_not be_valid
     end
 
-    # it 'that appointment belongs to user and motorbike' do
-    #   subject.save
-    #   expect(user.reservations).to eq([subject])
-    #   expect(course.reservations).to eq([subject])
-    #   subject.destroy
-    # end
-
-    it 'is not valid without a date' do
-      subject.date = nil
-      expect(subject).to_not be_valid
+    it 'should be invalid without a motorbike' do
+      @reservation = Reservation.new(user_id: @user.id, motorbike_id: nil, date: Date.today)
+      @reservation.save
+      expect(@reservation).to_not be_valid
     end
 
-    it 'is not valid without a city' do
-      subject.city = nil
-      expect(subject).to_not be_valid
+    it 'should be invalid without a date' do
+      @reservation = Reservation.new(user_id: @user.id, motorbike_id: @motorbike.id, date: nil)
+      @reservation.save
+      expect(@reservation).to_not be_valid
     end
 
-    # it 'is not valid without a motorbike_id' do
-    #   subject.course_id = nil
-    #   expect(subject).to_not be_valid
-    # end
-
-    it 'is not valid without a user_id' do
-      subject.user_id = nil
-      expect(subject).to_not be_valid
+    it 'should be invalid without a city' do
+      @reservation = Reservation.new(user_id: @user.id, motorbike_id: @motorbike.id, date: Date.today, city: nil)
+      @reservation.save
+      expect(@reservation).to_not be_valid
     end
-
-    it 'is not valid without a user' do
-      subject.user = nil
-      expect(subject).to_not be_valid
+  end
+  context 'associations' do
+    it 'belongs to user' do
+      associate = described_class.reflect_on_association(:user)
+      expect(associate.macro).to eq :belongs_to
     end
-
-    # it 'is not valid without a motorbike' do
-    #   subject.course = nil
-    #   expect(subject).to_not be_valid
-    # end
+    it 'belongs to motorbike' do
+      associate = described_class.reflect_on_association(:motorbike)
+      expect(associate.macro).to eq :belongs_to
+    end
   end
 end
