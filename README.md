@@ -156,7 +156,7 @@ Visit http://localhost:3000/api-docs in your browser.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/omarsalem7/capstone-back-end/issues).
+Feel free to check the [issues page](https://github.com/RWUBAKWANAYO/motorbike_booking_backend/issues).
 
 ## Show your support
 
