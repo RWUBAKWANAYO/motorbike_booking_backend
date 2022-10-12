@@ -1,20 +1,23 @@
-# Motorbike Booking Backend
+# Motorbike Booking Back-End
 
 > Motorbike Booking is a rails backend application for booking Motorbikes. This application serves as API endpoints for the frontend and users can load, create, and delete Motorbikes, as well as add reservations. Users need to sign up or sign in to access the API endponits. They can sign up or sign in using the API endponts.
 
-## Front End Repository
+## Schema
+![](./app/assets/images/ERD.png)
+
+### Front-End Repository
 
 [Motorbike Booking Frontend](https://github.com/RWUBAKWANAYO/motorbike_booking_frontend)
 
-## Kanban Board
+### Kanban Board
 [Kanban Board](https://github.com/RWUBAKWANAYO/motorbike_booking_backend/projects/1)
 
 > ***We are a group of five***
 1. Member 1 - [Pedro](https://github.com/ppmarq1)
-2. Team 2 - [Joseph](https://github.com/Kwentsir)
-3. Team 3 - [Emmanuel](https://github.com/Epaltechs)
-4. Team 4 - [Ghilain](https://github.com/Ghilain)
-5. Team 5 - [Olivier](https://github.com/RWUBAKWANAYO)
+2. Member 2 - [Joseph](https://github.com/Kwentsir)
+3. Member 3 - [Emmanuel](https://github.com/Epaltechs)
+4. Member 4 - [Ghilain](https://github.com/Ghilain)
+5. Member 5 - [Olivier](https://github.com/RWUBAKWANAYO)
 
 ## Built With
 
@@ -125,7 +128,8 @@ Visit http://localhost:3000/api-docs in your browser.
 👤 **Olivier**
 
 - GitHub: [@Rwubakwanayo](https://github.com/RWUBAKWANAYO)
-- Twitter: [](https://twitter.com/)
+- Twitter: [@Rwubakwanayo](https://twitter.com/rwubakwanayo
+)
 - LinkedIn: [Rwubakwanayo Oliver](https://www.linkedin.com/in/rwubakwanayo-olivier)
 
 👤 **Pedro**
