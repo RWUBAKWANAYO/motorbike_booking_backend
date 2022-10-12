@@ -2,6 +2,9 @@
 
 > Motorbike Booking is a rails backend application for booking Motorbikes. This application serves as API endpoints for the frontend and users can load, create, and delete Motorbikes, as well as add reservations. Users need to sign up or sign in to access the API endponits. They can sign up or sign in using the API endponts.
 
+## Schema
+![](./app/assets/images/ERD.png)
+
 ### Front-End Repository
 
 [Motorbike Booking Frontend](https://github.com/RWUBAKWANAYO/motorbike_booking_frontend)
