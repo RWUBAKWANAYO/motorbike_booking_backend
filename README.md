@@ -125,7 +125,8 @@ Visit http://localhost:3000/api-docs in your browser.
 👤 **Olivier**
 
 - GitHub: [@Rwubakwanayo](https://github.com/RWUBAKWANAYO)
-- Twitter: [](https://twitter.com/)
+- Twitter: [@Rwubakwanayo](https://twitter.com/rwubakwanayo
+)
 - LinkedIn: [Rwubakwanayo Oliver](https://www.linkedin.com/in/rwubakwanayo-olivier)
 
 👤 **Pedro**
