@@ -7,10 +7,13 @@
 
 ### Front-End Repository
 
-[Motorbike Booking Frontend](https://github.com/RWUBAKWANAYO/motorbike_booking_frontend)
+[Motorbike Booking Front-end](https://github.com/RWUBAKWANAYO/motorbike_booking_frontend)
 
 ### Kanban Board
 [Kanban Board](https://github.com/RWUBAKWANAYO/motorbike_booking_backend/projects/1)
+
+### Intial State of Kanban Board
+[Initial Kanban Board](./app/assets/images/Kanban.png)
 
 > ***We are a group of five***
 1. Member 1 - [Pedro](https://github.com/ppmarq1)
