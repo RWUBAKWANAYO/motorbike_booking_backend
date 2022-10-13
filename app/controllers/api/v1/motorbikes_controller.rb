@@ -12,7 +12,7 @@ class Api::V1::MotorbikesController < ApplicationController
   end
 
   def show
-    @motorbike = @motorbike.find_by_id(params[:id])
+    @motorbike = Motorbike.find(params[:id])
     if @motorbike
       render json: @motorbike, include: [:reservations]
     else
@@ -34,7 +34,7 @@ class Api::V1::MotorbikesController < ApplicationController
   end
 
   def destroy
-    @motorbike = @motorbike.find_by_id(params[:id])
+    @motorbike = Motorbike.find(params[:id])
     if @motorbike.destroy
       render json: { message: 'Motorbike deleted successfully' }
     else

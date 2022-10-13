@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :categories
       resources :motorbikes
       resources :adverts
+      resources :reservations
     end
   end
 end
