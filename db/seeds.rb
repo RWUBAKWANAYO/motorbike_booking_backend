@@ -7,6 +7,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts 'create categories....'
-Category.create(categname:'category 1', image:'category.png', description:'this is category')
-puts 'category created!'
+puts 'create admin....'
+User.create(name:'admin', role:'admin',email:'admin@gmail.com', password:'admin123',password_confirmation:'admin123')
+puts 'admin created!'
