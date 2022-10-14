@@ -263,6 +263,7 @@ DEPENDENCIES
   rails (~> 7.0.3)
   rails-controller-testing
   rspec-activemodel-mocks
+  rspec-core (~> 3.4)
   rspec-rails
   rswag
   rubocop (>= 1.0, < 2.0)
