@@ -1,5 +1,4 @@
 class Api::V1::ReservationsController < ApplicationController
-
   def show
     @reserved_motorbikes = Reservation.where(user_id: params[:id])
     if @reserved_motorbikes
