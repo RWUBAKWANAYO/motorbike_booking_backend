@@ -4,7 +4,7 @@ class Api::V1::MotorbikesController < ApplicationController
   def index
     @motorbikes = Motorbike.all.order(created_at: :desc)
     if @motorbikes
-      render json: @motorbikes, include: [:reservations]
+      render json: @motorbikes
     else
       render json: { message: 'There is no motorbikes', errors: @motorbikes.errors.full_messages },
              status: :unprocessable_entity
@@ -14,7 +14,7 @@ class Api::V1::MotorbikesController < ApplicationController
   def show
     @motorbike = Motorbike.find(params[:id])
     if @motorbike
-      render json: @motorbike, include: [:reservations]
+      render json: @motorbike
     else
       render json: { message: 'Unable to find @motorbike', errors: @motorbikes.errors.full_messages },
              status: :unprocessable_entity
