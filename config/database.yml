@@ -77,7 +77,7 @@ test:
 #
 production:
   <<: *default
-   url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
   database: motorbike_booking_backend_production
   username: motorbike_booking_backend
   password: <%= ENV["MOTORBIKE_BOOKING_BACKEND_DATABASE_PASSWORD"] %>
