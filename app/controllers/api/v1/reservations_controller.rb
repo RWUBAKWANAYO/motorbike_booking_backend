@@ -1,11 +1,7 @@
 class Api::V1::ReservationsController < ApplicationController
-  def index
-    @reservations = Reservation.all
-    render json: { reservation: @reservations }
-  end
 
   def show
-    @reserved_motorbikes = Reservation.where(id: params[:id])
+    @reserved_motorbikes = Reservation.where(user_id: params[:id])
     if @reserved_motorbikes
       render json: { reservation: @reserved_motorbikes }
     else

@@ -278,7 +278,7 @@ Devise.setup do |config|
     # jwt.secret = Rails.application.credentials.devise[:jwt_secret_key]
     jwt.dispatch_requests = [['POST', %r{^/users/sign_in$}]]
     jwt.revocation_requests = [['DELETE', %r{^/users/sign_out}]]
-    jwt.expiration_time = 24.hours.to_i
+    jwt.expiration_time = 366.days.to_i
   end
 
   # ==> Warden configuration
