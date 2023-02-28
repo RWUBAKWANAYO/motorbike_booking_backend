@@ -3,6 +3,7 @@ class CreateMotorbikes < ActiveRecord::Migration[7.0]
     create_table :motorbikes do |t|
       t.string :brand
       t.string :year
+      t.string :description
       t.references :category, null: false, foreign_key: true
       t.string :image
       t.integer :price

@@ -55,6 +55,6 @@ class Api::V1::MotorbikesController < ApplicationController
   private
 
   def motorbike_params
-    params.require(:motorbike).permit(:image, :category_id, :price, :year, :motor_name)
+    params.require(:motorbike).permit(:image, :category_id, :price, :year, :motor_name, :description)
   end
 end
